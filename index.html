@@ -4,7 +4,8 @@
 	<meta charset="gb2312" />
 	<title>飘城网</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="css/style.css" /> 
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -28,10 +29,67 @@
        </div>
     </div>	
 </nav>
-
+<div id="myCarousel" class="carousel slide">
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="item active" style="background:#223240">
+			<img src="img/slide1.png" alt="第一张">
+		</div>
+		<div class="item" style="background:#F5E4DC;">
+			<img src="img/slide2.png" alt="第二张">
+		</div>
+		<div class="item" style="background:#DE2A2D;">
+			<img src="img/slide3.png" alt="第三张">
+		</div>
+	</div>
+	<a href="#myCarousel" data-slide="prev" class="carousel-control left">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a href="#myCarousel" data-slide="next" class="carousel-control right">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>
 
 
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+<script type="text/javascript">
+		//轮播自动播放
+	$('#myCarousel').carousel({
+		//自动4秒播放
+		interval : 4000,
+	});
+
+	 //设置垂直居中
+	 $('.carousel-control').css('line-height', $('.carousel-inner img').height() + 'px');
+	 $(window).resize(function () {
+      	var $height = $('.carousel-inner img').eq(0).height() || 
+	 				  $('.carousel-inner img').eq(1).height() || 
+	 				  $('.carousel-inner img').eq(2).height();
+	 	$('.carousel-control').css('line-height', $height + 'px');
+	 });
+
+	//设置文字垂直居中，谷歌浏览器加载图片的顺序问题，导致高度无法获取
+	$(window).load(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+	
+
+	$(window).resize(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+
+	$(window).load(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+
+	$(window).resize(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+</script>
 </body>
 </html>
