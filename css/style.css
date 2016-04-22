@@ -183,4 +183,70 @@ a:focus {
 	.tab2-img {
 		float: right;
 	}
+	.jumbotron {
+		margin: 50px 0 0 0;
+		padding: 60px 0;
+		background: #ccc url(../img/bg.jpg);
+		color: #ccc;
+	}
+	
+	.jumbotron h1 {
+		font-size: 26px; //768,30; 992,33; 1200,36;
+		padding: 0 0 0 20px;
+	}
+	
+	.jumbotron h4 {
+		font-size: 16px; //768,16; 992,17; 1200,18
+		padding: 0 0 0 20px;
+	}
+}
+#information {
+	padding: 40px 0;
+	background: #eee;
+}
+
+.info-right {
+	background-color: #fff;
+	box-shadow: 2px 2px 3px #ccc;
+}
+
+.info-right blockquote {
+	padding: 0;
+	margin: 0;
+}
+
+.info-right h2 {
+	font-size: 20px;
+	padding: 5px;
+}
+
+.info-right h4 {
+	line-height: 1.6;
+}
+
+.info-content {
+	background-color: #fff;
+	box-shadow: 2px 2px 3px #ccc;
+	margin: 0 0 20px 0;
+}
+
+.info-content img {
+	margin: 12px 0;
+}
+
+.info-content h4 {
+	font-size: 14px; //768,16; 992,18; 1200,20;
+	padding: 2px 0 0 0;
+}
+
+.info-content p {
+	line-height: 1.6;
+	color: #666;
+}
+
+//对于.info-content h4，在中屏和大屏需要保持一行。
+.info-content h4 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
